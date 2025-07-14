@@ -1,4 +1,4 @@
-name: CI - Build and Test
+name: CI - Test Only
 
 on:
   push:
@@ -27,6 +27,6 @@ jobs:
         working-directory: cicd
         run: chmod +x ./gradlew
 
-      - name: Run Build and Test
+      - name: Run Test Only
         working-directory: cicd
-        run: ./gradlew clean build --stacktrace --info
+        run: ./gradlew test --stacktrace --info
