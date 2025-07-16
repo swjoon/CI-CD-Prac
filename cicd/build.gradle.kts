@@ -44,3 +44,9 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.named<Jar> ("bootJar"){
+	from("src/main/webapp") {
+		into("BOOT-INF/classes")
+	}
+}
