@@ -20,11 +20,18 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - name: Build with Gradle (bootJar)
-        run : |
+#      - name: Build with Gradle (bootJar)
+#        run : |
+#          cd cicd
+#          chmod +x gradlew
+#          ./gradlew bootJar
+
+#      .war
+      - name: Build with Gradle (war)
+        run: |
           cd cicd
           chmod +x gradlew
-          ./gradlew bootJar
+          ./gradlew clean war
 
       - name: Create Version Tag
         id : create_tag

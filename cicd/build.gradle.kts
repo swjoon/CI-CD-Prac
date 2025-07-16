@@ -2,6 +2,9 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.5.3"
 	id("io.spring.dependency-management") version "1.1.7"
+
+	// war 적용
+	id("war")
 }
 
 group = "app.backend"
@@ -45,8 +48,8 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-tasks.named<Jar> ("bootJar"){
+tasks.named<War> ("war"){
 	from("src/main/webapp") {
-		into("BOOT-INF/classes")
+		into("WEB-INF")
 	}
 }
