@@ -29,4 +29,4 @@ jobs:
 
       - name: Run Test Only
         working-directory: cicd
-        run: ./gradlew test --stacktrace --info
+        run: ./gradlew test --stacktrace --info --no-build-cache
